@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+import {faker} from '@faker-js/faker';
 import fs from 'fs'
 
 function generateUsers() {
@@ -10,7 +10,7 @@ function generateUsers() {
     let firstName = faker.name.firstName();
     let lastName = faker.name.lastName();
     let email = faker.internet.email();
-    let personAge = faker.date.birthdate({min: 18, max: 67, mode: 'age'});
+    let personAge = faker.datatype.number({'min': 18, 'max': 67 });
 
     users.push({
         "id": id,
