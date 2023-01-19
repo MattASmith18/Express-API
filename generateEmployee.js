@@ -1,11 +1,11 @@
 import {faker} from '@faker-js/faker';
 import fs from 'fs'
 
-function generateUsers() {
+function generateUsers(numberNeeded) {
 
   let users = []
 
-  for (let id=1; id <= 40; id++) {
+  for (let id=1; id <= numberNeeded; id++) {
 
     let firstName = faker.name.firstName();
     let lastName = faker.name.lastName();
@@ -21,10 +21,15 @@ function generateUsers() {
     });
   }
 
-  return { "data": users }
+  return { "Employees": users }
 }
 
-let dataObj = generateUsers();
 
-fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
+function create_Json(numberofEmployees){
+  let dataObj = generateUsers(numberofEmployees);
+  fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
+}
+
+module.exports = {create_Json};
+
 
