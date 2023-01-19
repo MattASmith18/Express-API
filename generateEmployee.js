@@ -28,7 +28,7 @@ function generateUsers() {
 }
 
 
-module.exports = function create_Json(){
+export function create_Json(){
   let dataObj = generateUsers();
   fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
 }

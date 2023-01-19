@@ -1,9 +1,9 @@
 const express= require('express')
 const app = express()
 const delete_Json = require('./deleteJson')
-delete_Json.delete_Json;
+delete_Json.delete_Json();
 const generateEmployee = require('./generateEmployee')
-generateEmployee.create_Json;
+generateEmployee.create_Json();
 const foo = require('./data.json');
 
 const port = 3000;

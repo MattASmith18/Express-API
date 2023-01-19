@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-module.exports = function delete_Json(){
+export function delete_Json(){
     const filePath = 'data.json';
     fs.access(filePath, error => {
       if (!error) {
