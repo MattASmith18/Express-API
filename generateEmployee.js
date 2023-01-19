@@ -4,11 +4,11 @@ const faker= require('@faker-js/faker');
 const fs = require('fs');
 
 
-function generateUsers(numberNeeded) {
+function generateUsers() {
 
   let users = []
 
-  for (let id=1; id <= numberNeeded; id++) {
+  for (let id=1; id <= 50; id++) {
 
     let firstName = faker.name.firstName();
     let lastName = faker.name.lastName();
@@ -28,11 +28,11 @@ function generateUsers(numberNeeded) {
 }
 
 
-function create_Json(numberofEmployees){
-  let dataObj = generateUsers(numberofEmployees);
+module.exports = function create_Json(){
+  let dataObj = generateUsers();
   fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
 }
 
-module.exports = {create_Json};
+
 
 
