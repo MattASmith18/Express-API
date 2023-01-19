@@ -1,5 +1,8 @@
-import {faker} from '@faker-js/faker';
-import fs from 'fs'
+//import {faker} from '@faker-js/faker';
+const faker= require('@faker-js/faker');
+//import fs from 'fs'
+const fs = require('fs');
+
 
 function generateUsers(numberNeeded) {
 

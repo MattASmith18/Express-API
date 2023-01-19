@@ -1,4 +1,4 @@
-const data = require('data');
+var foo = require('./data.json');
 const express= require('express')
 const app = express()
 
@@ -8,8 +8,10 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 });
 
-app.get('./generateEmployee', function (create_Json) {
-  create_Json.json(data);
+
+
+app.get('/people', function (req, res) {
+    res.json(foo);
 });
 
 app.use(express.urlencoded({
