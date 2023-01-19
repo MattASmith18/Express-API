@@ -1,4 +1,4 @@
-const data = require('data');
+const data = require('./data.js');
 const express= require('express')
 const app = express()
 
