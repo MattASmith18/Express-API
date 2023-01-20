@@ -1,9 +1,6 @@
-FROM node:latest
-RUN mkdir -p /api
-WORKDIR /api
-COPY package.json ./
+FROM node:9-slim
+WORKDIR /app
+COPY package.json /app
 RUN npm install
-COPY . .
-EXPOSE 3000
-RUN npm run build
+COPY . /app
 CMD ["npm", "start"]
