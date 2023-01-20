@@ -1,10 +1,29 @@
-var arr = new Array(10).fill().map(function() {
-  return {
-      first: chance["first"](),
-      last: chance["last"](),
-      email: chance["email"](),
-      age: change[age](),
-  };
-});
+//import {faker} from '@faker-js/faker';
+const { faker } = require('@faker-js/faker');
 
-var json = JSON.stringify({ users: arr }, null, 2);
+function generateUsers() {
+
+  let users = []
+
+  for (let id = 1; id <= 50; id++) {
+
+    let firstName = faker.name.firstName();
+    let lastName = faker.name.lastName();
+    let email = faker.internet.email();
+    let personAge = faker.datatype.number({ 'min': 18, 'max': 67 });
+
+    users.push({
+      "id": id,
+      "first_name": firstName,
+      "last_name": lastName,
+      "email": email,
+      "age ": personAge
+    });
+  }
+
+  return { "Employees": users }
+}
+
+module.exports = { generateUsers };
+
+
