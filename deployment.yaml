@@ -1,20 +1,20 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: express-API
+  name: express-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: express-API
+      app: express-api
   template:
     metadata:
       labels:
-        app: express-API
+        app: express-api
     spec:
       containers:
-        - name: express-API
-          image: express-API
+        - name: express-api
+          image: express-api
           imagePullPolicy: Never
           ports:
             - containerPort: 80
@@ -25,7 +25,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: express-API
+  name: express-api
 spec:
   type: NodePort
   ports:
@@ -34,4 +34,4 @@ spec:
       protocol: TCP
       nodePort: 32001
   selector:
-    app: express-API
+    app: express-api
