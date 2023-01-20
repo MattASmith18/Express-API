@@ -1,11 +1,9 @@
-FROM node:alpine as build-step
-
-RUN mkdir /app
-WORKDIR /app
-COPY package.json /app
+FROM node:latest
+RUN mkdir -p /api
+WORKDIR /api
+COPY package.json ./
 RUN npm install
-COPY . /app
+COPY . .
+EXPOSE 3000
 RUN npm run build
-
-FROM nginx:alpine
-COPY --from=build-step /app/build /usr/share/nginx/html
+CMD ["npm", "start"]
