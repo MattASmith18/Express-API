@@ -1,5 +1,5 @@
 //import {faker} from '@faker-js/faker';
-const faker= require('@faker-js/faker');
+const faker = require('@faker-js/faker');
 //import fs from 'fs'
 const fs = require('fs');
 
@@ -28,11 +28,11 @@ function generateUsers() {
 }
 
 
-export function create_Json(){
-  let dataObj = generateUsers();
-  fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
-}
+// module.exports = function create_Json(){
+//   let dataObj = generateUsers();
+//   fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
+// }
 
-
+module.exports = {generateUsers};
 
 
