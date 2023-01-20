@@ -1,8 +1,7 @@
-const express= require('express')
+const express = require('express')
 const app = express()
-const generateEmployee = require('./generateEmployee')
-//generateEmployee.create_Json();
-const foo = require('./data.json');
+const { generateUsers } = require('./generateEmployee')
+
 
 const port = 3000;
 
@@ -11,14 +10,14 @@ app.listen(port, () => {
 });
 
 app.get('/people', function (req, res) {
-  res.json(generateEmployee.generateUsers());
+  res.json(generateUsers());
 });
 
 app.use(express.urlencoded({
   extended: true
 }));
 
-app.post('/bar', function(req, res) {
+app.post('/bar', function (req, res) {
   var body = req.body;
   console.log(req.body.foo);
   res.send(req.body.foo);
