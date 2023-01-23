@@ -29,7 +29,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: express-api
+    - host: express-api.test
       http:
         paths:
           - path: /
