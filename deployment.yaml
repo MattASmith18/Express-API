@@ -19,3 +19,20 @@ spec:
           ports:
             - containerPort: 3000
       restartPolicy: Always
+
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: express-api
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      nodePort: 32002
+  selector:
+    app: express-api
