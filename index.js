@@ -1,7 +1,11 @@
 const express = require('express')
 const app = express()
+const cors = require("cors");
 const { generateUsers } = require('./generateEmployee')
-
+app.use(cors({
+  origin: "http://app.test",
+  credentials: true
+}))
 
 const port = 3000;
 
