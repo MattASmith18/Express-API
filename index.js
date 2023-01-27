@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const cors = require("cors");
 const { generateUsers } = require('./generateEmployee')
+
 app.use(cors({
   origin: "http://app.test",
   credentials: true
@@ -16,6 +17,7 @@ app.listen(port, () => {
 app.get('/people', function (req, res) {
   res.json(generateUsers());
 });
+
 
 app.use(express.urlencoded({
   extended: true
