@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
-const cors = require("cors");
+const cors = require("cors")
 const { generateUsers } = require('./generateEmployee')
+const mongoose = require('mongoose')
+
 app.use(cors({
   origin: "http://app.test",
   credentials: true
@@ -26,3 +28,4 @@ app.post('/bar', function (req, res) {
   console.log(req.body.foo);
   res.send(req.body.foo);
 });
+

@@ -1,4 +1,5 @@
 //import {faker} from '@faker-js/faker';
+import mongoose from 'mongoose';
 const { faker } = require('@faker-js/faker');
 
 function generateUsers() {
