@@ -58,7 +58,9 @@ app.post('/bar', function (req, res) {
  * //Post Method
 router.post('/post', async (req, res) => {
     const data = new Model({
-        name: req.body.name,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email
         age: req.body.age
     })
 
